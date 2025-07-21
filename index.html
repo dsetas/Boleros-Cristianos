@@ -1,37 +1,147 @@
-<div class="player">
-  <div class="track">
-    <h3>CANTA MI ALMA</h3>
-    <audio controls>
-      <source src="audio/01-CANTA-MI-ALMA.mp3" type="audio/mpeg">
-      Tu navegador no soporta el reproductor de audio.
-    </audio>
-  </div>
-  <div class="track">
-    <h3>CONFÍO EN DIOS</h3>
-    <audio controls>
-      <source src="audio/02-CONFIO-EN-DIOS.mp3" type="audio/mpeg">
-      Tu navegador no soporta el reproductor de audio.
-    </audio>
-  </div>
-  <div class="track">
-    <h3>EN TU PRESENCIA ME RINDO</h3>
-    <audio controls>
-      <source src="audio/03-EN-TU-PRESENCIA-ME-RINDO.mp3" type="audio/mpeg">
-      Tu navegador no soporta el reproductor de audio.
-    </audio>
-  </div>
-  <div class="track">
-    <h3>JESÚS ES MI REFUGIO (1)</h3>
-    <audio controls>
-      <source src="audio/04-JESUS-ES-MI-REFUGIO.mp3" type="audio/mpeg">
-      Tu navegador no soporta el reproductor de audio.
-    </audio>
-  </div>
-  <div class="track">
-    <h3>JESÚS ES MI REFUGIO (2)</h3>
-    <audio controls>
-      <source src="audio/05-JESUS-ES-MI-REFUGIO.mp3" type="audio/mpeg">
-      Tu navegador no soporta el reproductor de audio.
-    </audio>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boleros Cristianos I - Reproductor Personalizado</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #1f2937;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+    h1 {
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #0c4a6e;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    }
+    .player {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(12, 74, 110, 0.15);
+      width: 100%;
+      max-width: 450px;
+    }
+    .track {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1rem;
+    }
+    .track:last-child {
+      border: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .track h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: #1e293b;
+      font-weight: 600;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    button.play-pause {
+      background-color: #0c4a6e;
+      border: none;
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    button.play-pause:hover, button.play-pause:focus {
+      background-color: #084b69;
+      outline: none;
+    }
+    .progress-container {
+      flex: 1;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+    }
+    .progress {
+      background-color: #0c4a6e;
+      height: 100%;
+      width: 0%;
+      border-radius: 4px;
+      transition: width 0.1s linear;
+    }
+    .time {
+      font-size: 0.85rem;
+      width: 60px;
+      text-align: right;
+      color: #475569;
+      font-variant-numeric: tabular-nums;
+    }
+    @media (max-width: 480px) {
+      .player {
+        padding: 1.5rem;
+      }
+      .track h3 {
+        font-size: 1rem;
+      }
+      button.play-pause {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+      .time {
+        width: 50px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Boleros Cristianos I</h1>
+  <div class="player">
+    <div class="track" data-src="audio/01-CANTA-MI-ALMA.mp3">
+      <h3>CANTA MI ALMA</h3>
+      <div class="controls">
+        <button class="play-pause" aria-label="Reproducir Canta Mi Alma">▶️</button>
+        <div class="progress-container" tabindex="0" aria-label="Barra de progreso">
+          <div class="progress"></div>
+        </div>
+        <div class="time">0:00</div>
+      </div>
+    </div>
+    <div class="track" data-src="audio/02-CONFIO-EN-DIOS.mp3">
+      <h3>CONFÍO EN DIOS</h3>
+      <div class="controls">
+        <button class="play-pause" aria-label="Reproducir Confío en Dios">▶️</button>
+        <div class="progress-container" tabindex="0" aria-label="Barra de progreso">
+          <div class="progress"></div>
+        </div>
+        <div class="time">0:00</div>
+      </div>
+    </div>
+    <div class="track" data-src="audio/03-EN-TU-PRESENCIA-ME-RINDO.mp3">
+      <h3>EN TU PRESENCIA ME RINDO</h3>
+      <div class="controls">
+        <button class="play-pause" aria-label="Reproducir En tu Presencia Me Rindo">▶️</button>
+        <div class="progress-container" tabindex="0" aria-label="Barra de progreso">
+          <div class="progress"></div>
+        </div>
+        <div class="time">0:00</div>
+      </div>
+    </div>
+    <div class="track" data-src="audio/04-JESUS-ES-MI-REFUGIO.mp3">
+      <h3>JESÚS ES MI REFUGIO (1)</h3>
+      <div class="controls">
