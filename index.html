@@ -2,255 +2,85 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Boleros Cristianos I - Reproductor Protegido</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boleros Cristianos</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      color: #1f2937;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-      min-height: 100vh;
-    }
-    h1 {
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: #0c4a6e;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
-    }
-    .player {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(12, 74, 110, 0.15);
-      width: 100%;
-      max-width: 450px;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f1f1f1;
+      text-align: center;
     }
     .track {
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 1rem;
-    }
-    .track:last-child {
-      border: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    .track h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-      color: #1e293b;
-      font-weight: 600;
-    }
-    .controls {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    button.play-pause {
-      background-color: #0c4a6e;
-      border: none;
-      color: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
+      margin: 20px auto;
+      background: #222;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
       cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s;
     }
-    button.play-pause:hover, button.play-pause:focus {
-      background-color: #084b69;
-      outline: none;
+    .track:hover {
+      background: #333;
     }
-    .progress-container {
-      flex: 1;
-      height: 8px;
-      background: #e2e8f0;
-      border-radius: 4px;
-      cursor: pointer;
-      position: relative;
+    audio {
+      margin-top: 30px;
+      width: 80%;
     }
-    .progress {
-      background-color: #0c4a6e;
-      height: 100%;
-      width: 0%;
-      border-radius: 4px;
-      transition: width 0.1s linear;
+    h1 {
+      margin-top: 40px;
     }
-    .time {
-      font-size: 0.85rem;
-      width: 60px;
-      text-align: right;
-      color: #475569;
-      font-variant-numeric: tabular-nums;
-    }
-    @media (max-width: 480px) {
-      .player {
-        padding: 1.5rem;
-      }
-      .track h3 {
-        font-size: 1rem;
-      }
-      button.play-pause {
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
-      }
-      .time {
-        width: 50px;
-        font-size: 0.8rem;
-      }
+    h3 {
+      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
-  <h1>Boleros Cristianos I</h1>
-  <div class="player">
-    <div class="track" data-src="YXVkaW8vMDFDQU5UQS1NSS1BTE0ubXAz">
-      <h3>CANTA MI ALMA</h3>
-      <div class="controls">
-        <button class="play-pause" aria-label="Reproducir Canta Mi Alma">▶️</button>
-        <div class="progress-container" tabindex="0" aria-label="Barra de progreso">
-          <div class="progress"></div>
-        </div>
-        <div class="time">0:00</div>
-      </div>
-    </div>
-    <div class="track" data-src="YXVkaW8vMDItQ09ORklPLUVOLURJT1MubXAz">
-      <h3>CONFÍO EN DIOS</h3>
-      <div class="controls">
-        <button class="play-pause" aria-label="Reproducir Confío en Dios">▶️</button>
-        <div class="progress-container" tabindex="0" aria-label="Barra de progreso">
-          <div class="progress"></div>
-        </div>
-        <div class="time">0:00</div>
-      </div>
-    </div>
-    <div class="track" data-src="YXVkaW8vMDMtRU4tVFUqUFJFU0VOQ0lBLU1FLVJJTkRPLm1wMw==">
-      <h3>EN TU PRESENCIA ME RINDO</h3>
-      <div class="controls">
-        <button class="play-pause" aria-label="Reproducir En tu Presencia Me Rindo">▶️</button>
-        <div class="progress-container" tabindex="0" aria-label="Barra de progreso">
-          <div class="progress"></div>
-        </div>
-        <div class="time">0:00</div>
-      </div>
-    </div>
-    <div class="track" data-src="YXVkaW8vMDQtSkVTVVMtRVNNSU1JLVJFRlVHSU8ubXAz">
-      <h3>JESÚS ES MI REFUGIO (1)</h3>
-      <div class="controls">
-        <button class="play-pause" aria-label="Reproducir Jesús es mi Refugio 1">▶️</button>
-        <div class="progress-container" tabindex="0" aria-label="Barra de progreso">
-          <div class="progress"></div>
-        </div>
-        <div class="time">0:00</div>
-      </div>
-    </div>
-    <div class="track" data-src="YXVkaW8vMDUtSkVTVVMtRVNNSU1JLVJFRlVHSU8ubXAz">
-      <h3>JESÚS ES MI REFUGIO (2)</h3>
-      <div class="controls">
-        <button class="play-pause" aria-label="Reproducir Jesús es mi Refugio 2">▶️</button>
-        <div class="progress-container" tabindex="0" aria-label="Barra de progreso">
-          <div class="progress"></div>
-        </div>
-        <div class="time">0:00</div>
-      </div>
-    </div>
+  <h1>Boleros Cristianos</h1>
+
+  <div class="track" data-src="YXVkaW8vMDFDQU5UQS1NSS1BTE0ubXAz">
+    <h3>CANTA MI ALMA</h3>
+    <p>(Autor: Josué Zepeda)</p>
   </div>
 
+  <div class="track" data-src="YXVkaW8vMDItQ09ORklPLUVOLURJT1MubXAz">
+    <h3>CONFÍO EN DIOS</h3>
+    <p>(Autor: Josué Zepeda)</p>
+  </div>
+
+  <div class="track" data-src="YXVkaW8vMDMtRU4tVFUtcFJFU0VOQ0lBLU1FLVJJTkRPLm1wMw==">
+    <h3>EN TU PRESENCIA ME RINDO</h3>
+    <p>(Autor: Josué Zepeda)</p>
+  </div>
+
+  <div class="track" data-src="YXVkaW8vMDQtSkVTVVMtRVNNSU1JLVJFRlVHSU8ubXAz">
+    <h3>JESÚS ES MI REFUGIO (1)</h3>
+    <p>(Autor: Josué Zepeda)</p>
+  </div>
+
+  <div class="track" data-src="YXVkaW8vMDUtSkVTVVMtRVNNSU1JLVJFRlVHSU8ubXAz">
+    <h3>JESÚS ES MI REFUGIO (2)</h3>
+    <p>(Autor: Josué Zepeda)</p>
+  </div>
+
+  <audio id="audioPlayer" controls controlsList="nodownload">
+    Tu navegador no soporta la reproducción de audio.
+  </audio>
+
   <script>
-    // Función para decodificar base64
     function decodeBase64(str) {
       try {
         return atob(str);
-      } catch {
-        return null;
+      } catch (e) {
+        return '';
       }
     }
 
     const tracks = document.querySelectorAll('.track');
-    let currentAudio = null;
-    let currentPlayBtn = null;
+    const player = document.getElementById('audioPlayer');
 
     tracks.forEach(track => {
-      const playPauseBtn = track.querySelector('.play-pause');
-      const progressContainer = track.querySelector('.progress-container');
-      const progressBar = track.querySelector('.progress');
-      const timeDisplay = track.querySelector('.time');
+      track.addEventListener('
 
-      const encodedSrc = track.dataset.src;
-      const audioSrc = decodeBase64(encodedSrc);
-
-      if (!audioSrc) {
-        console.error('Error al decodificar URL de audio para:', track.querySelector('h3').textContent);
-        return;
-      }
-
-      const audio = new Audio(audioSrc);
-      audio.preload = 'metadata';
-
-      audio.addEventListener('timeupdate', () => {
-        if (audio.duration) {
-          const percent = (audio.currentTime / audio.duration) * 100;
-          progressBar.style.width = percent + '%';
-
-          const minutes = Math.floor(audio.currentTime / 60);
-          const seconds = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
-          timeDisplay.textContent = `${minutes}:${seconds}`;
-        }
-      });
-
-      audio.addEventListener('ended', () => {
-        playPauseBtn.textContent = '▶️';
-        timeDisplay.textContent = '0:00';
-        progressBar.style.width = '0%';
-      });
-
-      playPauseBtn.addEventListener('click', () => {
-        if (currentAudio && currentAudio !== audio) {
-          currentAudio.pause();
-          if (currentPlayBtn) currentPlayBtn.textContent = '▶️';
-        }
-
-        if (audio.paused) {
-          audio.play();
-          playPauseBtn.textContent = '⏸️';
-          currentAudio = audio;
-          currentPlayBtn = playPauseBtn;
-        } else {
-          audio.pause();
-          playPauseBtn.textContent = '▶️';
-        }
-      });
-
-      progressContainer.addEventListener('click', e => {
-        const rect = progressContainer.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        const width = rect.width;
-        const clickPercent = clickX / width;
-        if (audio.duration) {
-          audio.currentTime = clickPercent * audio.duration;
-        }
-      });
-
-      progressContainer.addEventListener('keydown', e => {
-        if (!audio.duration) return;
-        const step = audio.duration / 20;
-        if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
-          e.preventDefault();
-          audio.currentTime = Math.min(audio.currentTime + step, audio.duration);
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
-          e.preventDefault();
-          audio.currentTime = Math.max(audio.currentTime - step, 0);
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+  
