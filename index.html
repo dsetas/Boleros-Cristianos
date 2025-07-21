@@ -7,80 +7,74 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #f1f1f1;
+      background-color: #f2f2f2;
+      color: #333;
       text-align: center;
-    }
-    .track {
-      margin: 20px auto;
-      background: #222;
-      padding: 15px;
-      border-radius: 8px;
-      max-width: 400px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .track:hover {
-      background: #333;
-    }
-    audio {
-      margin-top: 30px;
-      width: 80%;
+      padding: 2rem;
     }
     h1 {
-      margin-top: 40px;
+      color: #6c2a2a;
     }
-    h3 {
-      margin-bottom: 5px;
+    .track {
+      background: #fff;
+      margin: 1rem auto;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 600px;
+    }
+    audio::-internal-media-controls-download-button {
+      display: none;
+    }
+    audio::-webkit-media-controls-enclosure {
+      overflow: hidden;
+    }
+    audio::-webkit-media-controls-panel {
+      background-color: #fafafa;
+    }
+    audio {
+      width: 100%;
+      outline: none;
     }
   </style>
 </head>
 <body>
   <h1>Boleros Cristianos</h1>
 
-  <div class="track" data-src="YXVkaW8vMDFDQU5UQS1NSS1BTE0ubXAz">
-    <h3>CANTA MI ALMA</h3>
-    <p>(Autor: Josué Zepeda)</p>
+  <div class="track" data-src="YXVkaW8vMDEtQ0FOVEEtTUktQUxNQS5tcDM=">
+    <h2>01 - Canta mi alma</h2>
+    <audio controls preload="none"></audio>
   </div>
 
   <div class="track" data-src="YXVkaW8vMDItQ09ORklPLUVOLURJT1MubXAz">
-    <h3>CONFÍO EN DIOS</h3>
-    <p>(Autor: Josué Zepeda)</p>
+    <h2>02 - Confío en Dios</h2>
+    <audio controls preload="none"></audio>
   </div>
 
   <div class="track" data-src="YXVkaW8vMDMtRU4tVFUtcFJFU0VOQ0lBLU1FLVJJTkRPLm1wMw==">
-    <h3>EN TU PRESENCIA ME RINDO</h3>
-    <p>(Autor: Josué Zepeda)</p>
+    <h2>03 - En tu presencia me rindo</h2>
+    <audio controls preload="none"></audio>
   </div>
 
   <div class="track" data-src="YXVkaW8vMDQtSkVTVVMtRVNNSU1JLVJFRlVHSU8ubXAz">
-    <h3>JESÚS ES MI REFUGIO (1)</h3>
-    <p>(Autor: Josué Zepeda)</p>
+    <h2>04 - Jesús es mi refugio</h2>
+    <audio controls preload="none"></audio>
   </div>
 
   <div class="track" data-src="YXVkaW8vMDUtSkVTVVMtRVNNSU1JLVJFRlVHSU8ubXAz">
-    <h3>JESÚS ES MI REFUGIO (2)</h3>
-    <p>(Autor: Josué Zepeda)</p>
+    <h2>05 - Jesús es mi refugio (versión 2)</h2>
+    <audio controls preload="none"></audio>
   </div>
 
-  <audio id="audioPlayer" controls controlsList="nodownload">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-
   <script>
-    function decodeBase64(str) {
-      try {
-        return atob(str);
-      } catch (e) {
-        return '';
-      }
-    }
-
-    const tracks = document.querySelectorAll('.track');
-    const player = document.getElementById('audioPlayer');
-
-    tracks.forEach(track => {
-      track.addEventListener('
-
-  
+    // Este script decodifica las rutas Base64 y oculta el enlace directo
+    document.querySelectorAll('.track').forEach(track => {
+      const base64 = track.getAttribute('data-src');
+      const src = atob(base64); // decodifica la ruta
+      const audio = track.querySelector('audio');
+      audio.src = src;
+    });
+  </script>
+</body>
+</html>
