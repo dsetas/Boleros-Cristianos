@@ -32,14 +32,13 @@
     audio {
       width: 100%;
     }
-    audio::-webkit-media-controls-playback-rate-button {
-      display: none;
-    }
+    /* Oculta botón de descarga */
     audio::-webkit-media-controls-download-button {
       display: none;
     }
-    audio::-webkit-media-controls-enclosure {
-      overflow: hidden;
+    /* Oculta controles avanzados */
+    audio::-webkit-media-controls-playback-rate {
+      display: none !important;
     }
     @media (max-width: 600px) {
       .card {
@@ -53,43 +52,7 @@
 
   <div class="card">
     <div class="title">01 – CANTA MI ALMA</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMS1DQU5UQS1NSS1BTE1BLm1wMw==">Tu navegador no soporta el audio.</audio>
+    <audio controls src="mediafiles/01-CANTA-MI-ALMA.mp3">Tu navegador no soporta el audio.</audio>
   </div>
 
-  <div class="card">
-    <div class="title">02 – CONFÍO EN DIOS</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMi1DT05GSU8tRU4tRElPUy5tcDM=">Tu navegador no soporta el audio.</audio>
-  </div>
-
-  <div class="card">
-    <div class="title">03 – EN TU PRESENCIA ME RINDO</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMy1FTi1UVS1QUkVTRU5DSUEtTUUtUklORE8ubXAz">Tu navegador no soporta el audio.</audio>
-  </div>
-
-  <div class="card">
-    <div class="title">04 – JESÚS ES MI REFUGIO</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wNC1KRVNVUy1FUy1NSS1SRUZVR0lPLm1wMw==">Tu navegador no soporta el audio.</audio>
-  </div>
-
-  <div class="card">
-    <div class="title">05 – LA CIUDAD CELESTE</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wNS1MQS1DSVVEQUQtQ0VMRVNURS5tcDM=">Tu navegador no soporta el audio.</audio>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("audio").forEach(audio => {
-        const encodedSrc = audio.dataset.src;
-        if (encodedSrc) {
-          try {
-            const decodedSrc = atob(encodedSrc);
-            audio.src = decodedSrc;
-          } catch (error) {
-            console.error("Error al decodificar Base64:", error);
-          }
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+  <div class="car
