@@ -1,102 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Boleros Cristianos I</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boleros Cristianos</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f3f3f3;
-      margin: 0;
+      background-color: #f4f4f4;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin: 0;
     }
 
     h1 {
-      color: #333;
       text-align: center;
       margin-bottom: 30px;
+      color: #2c3e50;
     }
 
     .card {
-      background-color: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 100%;
+      background: white;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 20px auto;
       max-width: 500px;
-      margin-bottom: 25px;
-      padding: 20px;
-      box-sizing: border-box;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #444;
-      font-size: 1.2em;
+    .title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #34495e;
     }
 
     audio {
       width: 100%;
-      outline: none;
-    }
-
-    audio::-internal-media-controls-download-button {
-      display: none;
     }
 
     audio::-webkit-media-controls-enclosure {
       overflow: hidden;
     }
 
-    audio[controls]::-webkit-media-controls-panel {
-      background-color: #fefefe;
+    audio::-webkit-media-controls-download-button {
+      display: none;
+    }
+
+    audio::-moz-download-button {
+      display: none;
     }
 
     @media (max-width: 600px) {
-      body {
-        padding: 10px;
+      .card {
+        margin: 15px 10px;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Boleros Cristianos I</h1>
+  <h1>Boleros Cristianos</h1>
 
   <div class="card">
-    <h3>01 – CANTA MI ALMA</h3>
-    <audio controls controlsList="nodownload" data-src="MDEtQ0FOVEEtTUlBTEEubXAz"></audio>
+    <div class="title">01 – CANTA MI ALMA</div>
+    <audio controls data-src="YXVkaW8vMDEtQ0FOVEEtTUlBTE1BLm1wMw=="></audio>
   </div>
 
   <div class="card">
-    <h3>02 – CONFÍO EN DIOS</h3>
-    <audio controls controlsList="nodownload" data-src="MDItQ09ORklPLUVOLURJT1MubXAz"></audio>
+    <div class="title">02 – CONFIO EN DIOS</div>
+    <audio controls data-src="YXVkaW8vMDItQ09ORklPLUVOLURJT1MubXAz"></audio>
   </div>
 
   <div class="card">
-    <h3>03 – EN TU PRESENCIA ME RINDO</h3>
-    <audio controls controlsList="nodownload" data-src="MDMtRU4tVFULUFJFU0VOQ0lBLU1FLVJJTkRPLm1wMw=="></audio>
+    <div class="title">03 – EN TU PRESENCIA ME RINDO</div>
+    <audio controls data-src="YXVkaW8vMDMtRU4tVFVLUFJFU0VOQ0lBLU1FLVJJTkRPLm1wMw=="></audio>
   </div>
 
   <div class="card">
-    <h3>04 – JESÚS ES MI REFUGIO</h3>
-    <audio controls controlsList="nodownload" data-src="MDQtSkVTVVMtRVMtTUktUkVGVUdJTy5tcDM="></audio>
+    <div class="title">04 – JESUS ES MI REFUGIO</div>
+    <audio controls data-src="YXVkaW8vMDQtSkVTVVMtRVMtTUktUkVGVUdJTy5tcDM="></audio>
   </div>
 
   <div class="card">
-    <h3>05 – LA CIUDAD CELESTE</h3>
-    <audio controls controlsList="nodownload" data-src="MDUtTEEtQ0lVREFELUNFTEVTVEUubXAz"></audio>
+    <div class="title">05 – LA CIUDAD CELESTE</div>
+    <audio controls data-src="YXVkaW8vMDUtTEEtQ0lVREFELUNFTEVTVEUubXAz"></audio>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("audio").forEach(audio => {
-        const encoded = audio.getAttribute("data-src");
-        const decoded = atob(encoded);
-        audio.src = decoded;
-      });
+    document.querySelectorAll('audio').forEach(player => {
+      const encoded = player.getAttribute('data-src');
+      const decoded = atob(encoded); // decodifica Base64
+      player.src = decoded;
     });
   </script>
 </body>
