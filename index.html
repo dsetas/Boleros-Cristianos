@@ -1,50 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Boleros Cristianos</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      padding: 20px;
-      margin: 0;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    .card {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 20px auto;
-      max-width: 500px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .title {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-bottom: 10px;
-      color: #34495e;
-    }
-    audio {
-      width: 100%;
-    }
-    /* Oculta botón de descarga */
-    audio::-webkit-media-controls-download-button {
-      display: none;
-    }
-    /* Oculta controles avanzados */
-    audio::-webkit-media-controls-playback-rate {
-      display: none !important;
-    }
-    @media (max-width: 600px) {
-      .card {
-        margin: 15px 10px;
-      }
-    }
+    body{font-family:Arial,sans-serif;background:#f2f2f2;padding:20px;margin:0;}
+    h1{text-align:center;color:#2c3e50;margin-bottom:30px;}
+    .card{background:#fff;border-radius:10px;padding:20px;margin:20px auto;max-width:500px;box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+    .card:hover{transform:scale(1.01);transition:0.2s;}
+    .title{font-size:1.1em;font-weight:bold;color:#34495e;margin-bottom:12px;text-align:center;}
+    audio{width:100%;}
+    audio::-webkit-media-controls-download-button, audio::-webkit-media-controls-playback-rate-button{display:none!important;}
   </style>
 </head>
 <body>
@@ -55,4 +21,24 @@
     <audio controls src="mediafiles/01-CANTA-MI-ALMA.mp3">Tu navegador no soporta el audio.</audio>
   </div>
 
-  <div class="car
+  <div class="card">
+    <div class="title">02 – CONFÍO EN DIOS</div>
+    <audio controls src="mediafiles/02-CONFIO-EN-DIOS.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <div class="title">03 – EN TU PRESENCIA ME RINDO</div>
+    <audio controls src="mediafiles/03-EN-TU-PRESENCIA-ME-RINDO.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <div class="title">04 – JESÚS ES MI REFUGIO</div>
+    <audio controls src="mediafiles/04-JESUS-ES-MI-REFUGIO.mp3"></audio>
+  </div>
+
+  <div class="card">
+    <div class="title">05 – LA CIUDAD CELESTE</div>
+    <audio controls src="mediafiles/05-LA-CIUDAD-CELESTE.mp3"></audio>
+  </div>
+</body>
+</html>
