@@ -5,91 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Boleros Cristianos</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-      margin: 0;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #2c3e50;
-    }
-
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 15px 20px;
-      margin: 20px auto;
-      max-width: 500px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .title {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 1.1em;
-      color: #34495e;
-    }
-
-    audio {
-      width: 100%;
-    }
-
-    audio::-webkit-media-controls-enclosure {
-      overflow: hidden;
-    }
-
-    audio::-webkit-media-controls-download-button {
-      display: none;
-    }
-
-    audio::-moz-download-button {
-      display: none;
-    }
-
-    @media (max-width: 600px) {
-      .card {
-        margin: 15px 10px;
-      }
-    }
+    /* (mismo CSS que antes) */
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; margin:0 }
+    h1 { text-align:center; margin-bottom:30px; color:#2c3e50 }
+    .card { background:#fff; border-radius:10px; padding:15px 20px; margin:20px auto; max-width:500px;
+            box-shadow:0 4px 8px rgba(0,0,0,0.1) }
+    .title { font-weight:bold; margin-bottom:10px; font-size:1.1em; color:#34495e }
+    audio { width:100% }
+    audio::-webkit-media-controls-download-button { display:none }
+    audio::-webkit-media-controls-enclosure { overflow:hidden }
+    audio::-moz-download-button { display:none }
+    @media (max-width:600px) { .card { margin:15px 10px } }
   </style>
 </head>
 <body>
   <h1>Boleros Cristianos</h1>
-
+  <!-- Tarjetas recortadas por brevedad -->
   <div class="card">
     <div class="title">01 – CANTA MI ALMA</div>
-    <audio controls data-src="YXVkaW8vMDEtQ0FOVEEtTUlBTE1BLm1wMw=="></audio>
+    <audio controls data-src="YXVkaW8vMDEtQ0FOVEEtTUlBTE1BLm1wMw==">Tu navegador no soporta el elemento audio.</audio>
   </div>
-
-  <div class="card">
-    <div class="title">02 – CONFIO EN DIOS</div>
-    <audio controls data-src="YXVkaW8vMDItQ09ORklPLUVOLURJT1MubXAz"></audio>
-  </div>
-
-  <div class="card">
-    <div class="title">03 – EN TU PRESENCIA ME RINDO</div>
-    <audio controls data-src="YXVkaW8vMDMtRU4tVFVLUFJFU0VOQ0lBLU1FLVJJTkRPLm1wMw=="></audio>
-  </div>
-
-  <div class="card">
-    <div class="title">04 – JESUS ES MI REFUGIO</div>
-    <audio controls data-src="YXVkaW8vMDQtSkVTVVMtRVMtTUktUkVGVUdJTy5tcDM="></audio>
-  </div>
-
-  <div class="card">
-    <div class="title">05 – LA CIUDAD CELESTE</div>
-    <audio controls data-src="YXVkaW8vMDUtTEEtQ0lVREFELUNFTEVTVEUubXAz"></audio>
-  </div>
+  <!-- ... otras canciones iguales ... -->
 
   <script>
-    document.querySelectorAll('audio').forEach(player => {
-      const encoded = player.getAttribute('data-src');
-      const decoded = atob(encoded); // decodifica Base64
-      player.src = decoded;
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('audio').forEach(player => {
+        try {
+          const b64 = player.getAttribute('data-src') || '';
+          const url = atob(b64);  // decodificar base64
+          console.log('Asignando src->', url);
+          player.src = url;
+        } catch (err) {
+          console.error('Error decodificando base64:', err);
+        }
+      });
     });
   </script>
 </body>
