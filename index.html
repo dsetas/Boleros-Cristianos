@@ -1,95 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Reproductor de Música</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-            gap: 20px;
-        }
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 100%;
-            max-width: 350px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .card h3 {
-            margin-top: 0;
-            color: #333;
-        }
-        .card audio {
-            width: 100%;
-            margin-top: 15px;
-        }
-        /* The .download-button was for a custom link, not the native audio controls */
-        .download-button {
-            display: none; /* Keep this hidden if you don't want a custom download link */
-        }
-        /* Media Queries para Responsividad */
-        @media (min-width: 600px) {
-            .card {
-                width: calc(50% - 40px); /* Dos tarjetas por fila */
-            }
-        }
-        @media (min-width: 900px) {
-            .card {
-                width: calc(33.333% - 40px); /* Tres tarjetas por fila */
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boleros Cristianos I</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 25px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #444;
+      font-size: 1.2em;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    audio::-internal-media-controls-download-button {
+      display: none;
+    }
+
+    audio::-webkit-media-controls-enclosure {
+      overflow: hidden;
+    }
+
+    audio[controls]::-webkit-media-controls-panel {
+      background-color: #fefefe;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <h1>Boleros Cristianos I</h1>
 
-    <div class="card">
-        <h3>01 – CANTA MI ALMA</h3>
-        <audio controls controlsList="nodownload" data-src="MHFkaW8vMDEtQ0FOSEEuZXNfTUktQUxNQS5tcDM="></audio>
-        <a href="#" class="download-button" download>Descargar</a>
-    </div>
+  <div class="card">
+    <h3>01 – CANTA MI ALMA</h3>
+    <audio controls controlsList="nodownload" data-src="MDEtQ0FOVEEtTUlBTEEubXAz"></audio>
+  </div>
 
-    <div class="card">
-        <h3>02 – CONFIO EN DIOS</h3>
-        <audio controls controlsList="nodownload" data-src="MHFkaW8vMDItQ09ORklPLUVOX0RJT1MubXAz"></audio>
-        <a href="#" class="download-button" download>Descargar</a>
-    </div>
+  <div class="card">
+    <h3>02 – CONFÍO EN DIOS</h3>
+    <audio controls controlsList="nodownload" data-src="MDItQ09ORklPLUVOLURJT1MubXAz"></audio>
+  </div>
 
-    <div class="card">
-        <h3>03 – EN TU PRESENCIA ME RINDO</h3>
-        <audio controls controlsList="nodownload" data-src="MHFkaW8vMDMtRU5fVFVfUFJFU0VOQ0lBLU1FX1JJTkRPLm1wMw=="></audio>
-        <a href="#" class="download-button" download>Descargar</a>
-    </div>
-
-    <div class="card">
-        <h3>04 – JESUS ES MI REFUGIO</h3>
-        <audio controls controlsList="nodownload" data-src="MHFkaW8vMDQtSkVTVVMuZXNfTUlfUkVGVUdJTy5tcDM="></audio>
-        <a href="#" class="download-button" download>Descargar</a>
-    </div>
-
-    <div class="card">
-        <h3>05 – LA CIUDAD CELESTE</h3>
-        <audio controls controlsList="nodownload" data-src="MHFkaW8vMDUtTEEuY2l1ZGFkX0NFTEVTVEUubXAz"></audio>
-        <a href="#" class="download-button" download>Descargar</a>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const audioElements = document.querySelectorAll('audio[data-src]');
-            audioElements.forEach(audio => {
-                const encodedSrc = audio.getAttribute('data-src');
-                const decodedSrc = atob(encodedSrc); // Decodifica Base64
-                audio.src = decodedSrc;
-            });
-        });
-    </script>
-</body>
-</html>
+  <div class="card">
+    <h3>03 – EN TU PRESENCIA ME RINDO</h3>
+    <audio controls controlsList="nodownload"
