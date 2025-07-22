@@ -6,85 +6,169 @@
   <title>Boleros Cristianos</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #ececec;
       margin: 0;
+      padding: 20px;
     }
     h1 {
       text-align: center;
-      color: #2c3e50;
+      color: #333;
+      margin-bottom: 30px;
     }
-    .card {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 20px auto;
+    .track {
+      background: #fff;
+      border-radius: 12px;
+      margin: 15px auto;
       max-width: 500px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 20px;
     }
-    .title {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-bottom: 10px;
-      color: #34495e;
+    .track-title {
+      font-size: 1.2em;
+      color: #444;
+      margin-bottom: 12px;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .play-btn {
+      width: 40px;
+      height: 40px;
+      background: #4a90e2;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .progress-container {
+      flex: 1;
+      height: 8px;
+      background: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .progress {
+      height: 100%;
+      background: #4a90e2;
+      width: 0;
     }
     audio {
-      width: 100%;
-    }
-    audio::-webkit-media-controls-download-button {
       display: none;
-    }
-    audio::-webkit-media-controls-enclosure {
-      overflow: hidden;
-    }
-    @media (max-width: 600px) {
-      .card {
-        margin: 15px 10px;
-      }
     }
   </style>
 </head>
 <body>
   <h1>Boleros Cristianos</h1>
 
-  <div class="card">
-    <div class="title">01 – CANTA MI ALMA</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMS1DQU5UQS1NSS1BTExBLm1wMw==">Tu navegador no soporta el audio.</audio>
+  <!-- Track list -->
+  <div class="track" data-src="bWVkaWFmaWxlcy8wMS1DQU5UQS1NSS1BTExBLm1wMw==">
+    <div class="track-title">01 – CANTA MI ALMA</div>
+    <div class="controls">
+      <button class="play-btn">►</button>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <span class="time">00:00</span>
+    </div>
+    <audio></audio>
   </div>
 
-  <div class="card">
-    <div class="title">02 – CONFÍO EN DIOS</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMi1DT05GSU8tRU4tRElPUy5tcDM=">Tu navegador no soporta el audio.</audio>
+  <div class="track" data-src="bWVkaWFmaWxlcy8wMi1DT05GSU8tRU4tRElPUy5tcDM=">
+    <div class="track-title">02 – CONFÍO EN DIOS</div>
+    <div class="controls">
+      <button class="play-btn">►</button>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <span class="time">00:00</span>
+    </div>
+    <audio></audio>
   </div>
 
-  <div class="card">
-    <div class="title">03 – EN TU PRESENCIA ME RINDO</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMy1FTi1UVS1QUkVTRU5DSUEtTUUtUklORE8ubXAz">Tu navegador no soporta el audio.</audio>
+  <div class="track" data-src="bWVkaWFmaWxlcy8wMy1FTi1UVS1QUkVTRU5DSUEtTUUtUklORE8ubXAz">
+    <div class="track-title">03 – EN TU PRESENCIA ME RINDO</div>
+    <div class="controls">
+      <button class="play-btn">►</button>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <span class="time">00:00</span>
+    </div>
+    <audio></audio>
   </div>
 
-  <div class="card">
-    <div class="title">04 – JESÚS ES MI REFUGIO</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wNC1KRVNVUy1FUy1NSS1SRUZVR0lPLm1wMw==">Tu navegador no soporta el audio.</audio>
+  <div class="track" data-src="bWVkaWFmaWxlcy8wNC1KRVNVUy1FUy1NSS1SRUZVR0lPLm1wMw==">
+    <div class="track-title">04 – JESÚS ES MI REFUGIO</div>
+    <div class="controls">
+      <button class="play-btn">►</button>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <span class="time">00:00</span>
+    </div>
+    <audio></audio>
   </div>
 
-  <div class="card">
-    <div class="title">05 – LA CIUDAD CELESTE</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wNS1MQS1DSVVEQUQtQ0VMRVNURS5tcDM=">Tu navegador no soporta el audio.</audio>
+  <div class="track" data-src="bWVkaWFmaWxlcy8wNS1MQS1DSVVEQUQtQ0VMRVNURS5tcDM=">
+    <div class="track-title">05 – LA CIUDAD CELESTE</div>
+    <div class="controls">
+      <button class="play-btn">►</button>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <span class="time">00:00</span>
+    </div>
+    <audio></audio>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("audio").forEach(audio => {
-        const encodedSrc = audio.dataset.src;
-        if (encodedSrc) {
-          try {
-            let decodedSrc = atob(encodedSrc);
-            audio.src = decodedSrc;
-          } catch (error) {
-            console.error("Error al decodificar Base64:", error);
-          }
+    document.querySelectorAll('.track').forEach(track => {
+      const audio = track.querySelector('audio');
+      const btn = track.querySelector('.play-btn');
+      const progressBar = track.querySelector('.progress');
+      const timeLabel = track.querySelector('.time');
+      // Set audio source
+      const src = atob(track.dataset.src);
+      audio.src = src;
+      // Play / Pause toggle
+      btn.addEventListener('click', () => {
+        if (audio.paused) {
+          document.querySelectorAll('audio').forEach(a => a.pause());
+          document.querySelectorAll('.play-btn').forEach(b => b.textContent = '►');
+          audio.play();
+          btn.textContent = '❚❚';
+        } else {
+          audio.pause();
+          btn.textContent = '►';
         }
+      });
+      // Update progress
+      audio.addEventListener('timeupdate', () => {
+        const pct = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${pct}%`;
+        const m = Math.floor(audio.currentTime / 60).toString().padStart(2, '0');
+        const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+        timeLabel.textContent = `${m}:${s}`;
+      });
+      // Seek on click
+      track.querySelector('.progress-container').addEventListener('click', e => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const pct = x / rect.width;
+        audio.currentTime = pct * audio.duration;
+      });
+      // When audio ends
+      audio.addEventListener('ended', () => {
+        btn.textContent = '►';
       });
     });
   </script>
