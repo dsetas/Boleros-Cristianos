@@ -24,6 +24,11 @@
       width: 90%;
       max-width: 600px;
     }
+    audio {
+      width: 100%;
+      outline: none;
+    }
+    /* 🔒 Oculta botón de descarga en navegadores compatibles */
     audio::-internal-media-controls-download-button {
       display: none;
     }
@@ -32,10 +37,6 @@
     }
     audio::-webkit-media-controls-panel {
       background-color: #fafafa;
-    }
-    audio {
-      width: 100%;
-      outline: none;
     }
   </style>
 </head>
@@ -57,21 +58,21 @@
     <audio controls preload="none"></audio>
   </div>
 
-  <div class="track" data-src="YXVkaW8vMDQtSkVTVVMtRVNNSU1JLVJFRlVHSU8ubXAz">
+  <div class="track" data-src="YXVkaW8vMDQtSkVTVVMtRVMtTUk tUkVGVUdJTy5tcDM=">
     <h2>04 - Jesús es mi refugio</h2>
     <audio controls preload="none"></audio>
   </div>
 
-  <div class="track" data-src="YXVkaW8vMDUtSkVTVVMtRVNNSU1JLVJFRlVHSU8ubXAz">
-    <h2>05 - Jesús es mi refugio (versión 2)</h2>
+  <div class="track" data-src="YXVkaW8vMDUtTEEtQ0lVREFELUNFTEVTVEUubXAz">
+    <h2>05 - La ciudad celeste</h2>
     <audio controls preload="none"></audio>
   </div>
 
   <script>
-    // Este script decodifica las rutas Base64 y oculta el enlace directo
+    // Script que decodifica la ruta en Base64 y la asigna como src
     document.querySelectorAll('.track').forEach(track => {
       const base64 = track.getAttribute('data-src');
-      const src = atob(base64); // decodifica la ruta
+      const src = atob(base64);
       const audio = track.querySelector('audio');
       audio.src = src;
     });
