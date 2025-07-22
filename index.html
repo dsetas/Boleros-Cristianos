@@ -49,28 +49,28 @@
   <h1>Boleros Cristianos</h1>
 
   <div class="card">
-    <div class="title">01–CANTA-MI-ALMA</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMS1DQU5UQSBNSSBBTE1BLm1wMw==">Tu navegador no soporta el audio.</audio>
+    <div class="title">01 – CANTA MI ALMA</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wMS1DQU5UQS1NSS1BTExBLm1wMw==">Tu navegador no soporta el audio.</audio>
   </div>
 
   <div class="card">
-    <div class="title">02–CONFÍO-EN-DIOS</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMi1DT05GSU8gRU4gRElPUy5tcDM=">Tu navegador no soporta el audio.</audio>
+    <div class="title">02 – CONFÍO EN DIOS</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wMi1DT05GSU8tRU4tRElPUy5tcDM=">Tu navegador no soporta el audio.</audio>
   </div>
 
   <div class="card">
-    <div class="title">03 –EN-TU-PRESENCIA ME RINDO</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMy1FTiBUVSBQUkVTRU5DSUEgTUUgUklORE8ubXAz">Tu navegador no soporta el audio.</audio>
+    <div class="title">03 – EN TU PRESENCIA ME RINDO</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wMy1FTi1UVS1QUkVTRU5DSUEtTUUtUklORE8ubXAz">Tu navegador no soporta el audio.</audio>
   </div>
 
   <div class="card">
-    <div class="title">04–JESÚS-ES-MI-REFUGIO</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wNC1KRVNVUyBFUyBNSSBSRUZVR0lPLm1wMw==">Tu navegador no soporta el audio.</audio>
+    <div class="title">04 – JESÚS ES MI REFUGIO</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wNC1KRVNVUy1FUy1NSS1SRUZVR0lPLm1wMw==">Tu navegador no soporta el audio.</audio>
   </div>
 
   <div class="card">
-    <div class="title">05–LA-CIUDAD-CELESTE</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wNS1MQSBDSVVEQUQgQ0VMRVNURS5tcDM=">Tu navegador no soporta el audio.</audio>
+    <div class="title">05 – LA CIUDAD CELESTE</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wNS1MQS1DSVVEQUQtQ0VMRVNURS5tcDM=">Tu navegador no soporta el audio.</audio>
   </div>
 
   <script>
@@ -79,7 +79,7 @@
         const encodedSrc = audio.dataset.src;
         if (encodedSrc) {
           try {
-            const decodedSrc = atob(encodedSrc);
+            let decodedSrc = atob(encodedSrc);
             audio.src = decodedSrc;
           } catch (error) {
             console.error("Error al decodificar Base64:", error);
