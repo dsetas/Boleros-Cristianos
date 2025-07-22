@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Boleros Cristianos</title>
   <style>
     body {
@@ -48,6 +48,9 @@
     .btn:hover {
       background-color: #1f5f87;
     }
+    audio {
+      display: none; /* Oculta completamente el reproductor nativo */
+    }
   </style>
 </head>
 <body>
@@ -56,4 +59,61 @@
 
 <div class="card">
   <div class="title">01 – CANTA MI ALMA</div>
-  <div class="controls
+  <div class="controls">
+    <button class="btn" onclick="playAudio('audio1')">▶️ Reproducir</button>
+    <button class="btn" onclick="pauseAudio('audio1')">⏸️ Pausar</button>
+  </div>
+  <audio id="audio1" src="mediafiles/01-CANTA-MI-ALMA.mp3" preload="none"></audio>
+</div>
+
+<div class="card">
+  <div class="title">02 – CONFÍO EN DIOS</div>
+  <div class="controls">
+    <button class="btn" onclick="playAudio('audio2')">▶️ Reproducir</button>
+    <button class="btn" onclick="pauseAudio('audio2')">⏸️ Pausar</button>
+  </div>
+  <audio id="audio2" src="mediafiles/02-CONFIO-EN-DIOS.mp3" preload="none"></audio>
+</div>
+
+<div class="card">
+  <div class="title">03 – EN TU PRESENCIA ME RINDO</div>
+  <div class="controls">
+    <button class="btn" onclick="playAudio('audio3')">▶️ Reproducir</button>
+    <button class="btn" onclick="pauseAudio('audio3')">⏸️ Pausar</button>
+  </div>
+  <audio id="audio3" src="mediafiles/03-EN-TU-PRESENCIA-ME-RINDO.mp3" preload="none"></audio>
+</div>
+
+<div class="card">
+  <div class="title">04 – JESÚS ES MI REFUGIO</div>
+  <div class="controls">
+    <button class="btn" onclick="playAudio('audio4')">▶️ Reproducir</button>
+    <button class="btn" onclick="pauseAudio('audio4')">⏸️ Pausar</button>
+  </div>
+  <audio id="audio4" src="mediafiles/04-JESUS-ES-MI-REFUGIO.mp3" preload="none"></audio>
+</div>
+
+<div class="card">
+  <div class="title">05 – LA CIUDAD CELESTE</div>
+  <div class="controls">
+    <button class="btn" onclick="playAudio('audio5')">▶️ Reproducir</button>
+    <button class="btn" onclick="pauseAudio('audio5')">⏸️ Pausar</button>
+  </div>
+  <audio id="audio5" src="mediafiles/05-LA-CIUDAD-CELESTE.mp3" preload="none"></audio>
+</div>
+
+<script>
+  function playAudio(id) {
+    const audios = document.querySelectorAll("audio");
+    audios.forEach(audio => {
+      if (audio.id !== id) audio.pause();
+    });
+    document.getElementById(id).play();
+  }
+  function pauseAudio(id) {
+    document.getElementById(id).pause();
+  }
+</script>
+
+</body>
+</html>
