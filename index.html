@@ -77,4 +77,28 @@
 
   <div class="card">
     <h3>03 – EN TU PRESENCIA ME RINDO</h3>
-    <audio controls controlsList="nodownload"
+    <audio controls controlsList="nodownload" data-src="MDMtRU4tVFULUFJFU0VOQ0lBLU1FLVJJTkRPLm1wMw=="></audio>
+  </div>
+
+  <div class="card">
+    <h3>04 – JESÚS ES MI REFUGIO</h3>
+    <audio controls controlsList="nodownload" data-src="MDQtSkVTVVMtRVMtTUk=
+    tUkVGVUdJTy5tcDM="></audio>
+  </div>
+
+  <div class="card">
+    <h3>05 – LA CIUDAD CELESTE</h3>
+    <audio controls controlsList="nodownload" data-src="MDUtTEEtQ0lVREFELUNFTEVTVEUubXAz"></audio>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("audio").forEach(audio => {
+        const encoded = audio.getAttribute("data-src");
+        const decoded = atob(encoded);
+        audio.src = decoded;
+      });
+    });
+  </script>
+</body>
+</html>
