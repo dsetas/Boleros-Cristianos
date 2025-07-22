@@ -2,58 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boleros Cristianos</title>
   <style>
     body {
+      background: linear-gradient(145deg, #f6f6f6, #e9ecef);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #ffffff);
       padding: 20px;
       margin: 0;
     }
-
     h1 {
       text-align: center;
       color: #2c3e50;
-      font-size: 2em;
       margin-bottom: 40px;
     }
-
     .card {
       background-color: #ffffff;
-      border-radius: 15px;
+      border-radius: 16px;
       padding: 20px;
       margin: 20px auto;
       max-width: 600px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
-
     .card:hover {
-      transform: scale(1.01);
+      transform: scale(1.02);
     }
-
     .title {
-      font-weight: bold;
       font-size: 1.2em;
-      margin-bottom: 12px;
-      color: #00796b;
-      text-align: center;
+      margin-bottom: 10px;
+      color: #34495e;
+      font-weight: bold;
     }
-
     audio {
       width: 100%;
       outline: none;
     }
-
     audio::-webkit-media-controls-download-button {
-      display: none !important;
+      display: none;
     }
-
+    audio::-webkit-media-controls-playback-rate-button {
+      display: none;
+    }
     audio::-webkit-media-controls-enclosure {
       overflow: hidden;
     }
-
     @media (max-width: 600px) {
       .card {
         margin: 15px 10px;
@@ -62,47 +55,46 @@
   </style>
 </head>
 <body>
+
   <h1>Boleros Cristianos</h1>
 
   <div class="card">
-    <div class="title">01 – CANTA MI ALMA</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMS1DQU5UQS1NSS1BTExBLm1wMw==">Tu navegador no soporta el audio.</audio>
+    <div class="title">01 – Canta mi alma</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wMS1DYW50YU1pQWxtYS5tcDM=">Tu navegador no soporta el audio.</audio>
   </div>
 
   <div class="card">
-    <div class="title">02 – CONFÍO EN DIOS</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMi1DT05GSU8gRU4gRElPUy5tcDM=">Tu navegador no soporta el audio.</audio>
+    <div class="title">02 – Confío en Dios</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wMi1Db25maW9FbkRpb3MubXAz">Tu navegador no soporta el audio.</audio>
   </div>
 
   <div class="card">
-    <div class="title">03 – EN TU PRESENCIA ME RINDO</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wMy1FTiBUVSBQUkVTRU5DSUEgTUUgUklORE8ubXAz">Tu navegador no soporta el audio.</audio>
+    <div class="title">03 – En tu presencia me rindo</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wMy1FblR1UHJlc2VuY2lhTWVSaW5kby5tcDM=">Tu navegador no soporta el audio.</audio>
   </div>
 
   <div class="card">
-    <div class="title">04 – JESÚS ES MI REFUGIO</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wNC1KRVNVUyBFUyBNSSBSRUZVR0lPLm1wMw==">Tu navegador no soporta el audio.</audio>
+    <div class="title">04 – Jesús es mi refugio</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wNC1KZXN1c0VzTWlSZWZ1Z2lvLm1wMw==">Tu navegador no soporta el audio.</audio>
   </div>
 
   <div class="card">
-    <div class="title">05 – LA CIUDAD CELESTE</div>
-    <audio controls data-src="bWVkaWFmaWxlcy8wNS1MQSBDSVVEQUQgQ0VMRVNURS5tcDM=">Tu navegador no soporta el audio.</audio>
+    <div class="title">05 – La ciudad celeste</div>
+    <audio controls data-src="bWVkaWFmaWxlcy8wNS1MYUNpdWRhZENlbGVzdGUubXAz">Tu navegador no soporta el audio.</audio>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("audio").forEach(audio => {
         const encodedSrc = audio.dataset.src;
-        if (encodedSrc) {
-          try {
-            const decodedSrc = atob(encodedSrc);
-            audio.src = decodedSrc;
-          } catch (error) {
-            console.error("Error al decodificar Base64:", error);
-          }
+        try {
+          audio.src = atob(encodedSrc);
+        } catch (err) {
+          console.error("Error al decodificar audio:", err);
         }
       });
     });
   </script>
+
 </body>
 </html>
